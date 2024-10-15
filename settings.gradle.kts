@@ -14,5 +14,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "LocalLift"
-include ':app'
-include ':app'
