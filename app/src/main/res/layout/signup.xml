@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/sign_in_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/localift_logo"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Stated"
+                android:textSize="30sp"
+                android:textColor="@color/dark_green"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="16sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create your account"
+                android:textSize="20dp"
+                android:textColor="@color/dark_green"
+                android:layout_gravity="center"
+                android:layout_marginTop="16sp"
+                />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:layout_marginTop="32sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:background="@drawable/rounded_corner"
+                android:padding="18dp"
+                android:inputType="text"
+                android:id="@+id/username_input"/>
+
+            <!-- Password Input -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:layout_marginTop="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:background="@drawable/rounded_corner"
+                android:textSize="20sp"
+                android:padding="18dp"
+                android:inputType="textPassword"
+                android:id="@+id/password_input"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:background="@drawable/rounded_btn"
+                android:textColor="@color/light_yellow"
+                android:padding="18dp"
+                android:layout_marginTop="16sp"
+                android:textSize="20sp"
+                android:id="@+id/sign_in_google"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
