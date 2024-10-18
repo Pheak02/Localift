@@ -27,15 +27,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/sign_in_background">
 
         <!-- Logo -->
+
+        <!-- Subtitle Text -->
         <ImageView
             android:layout_width="189dp"
             android:layout_height="148dp"
             android:src="@drawable/localLift_logo" />
 
-        <!-- Subtitle Text -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -46,6 +49,27 @@
             android:textColor="@color/green_light"
             android:textSize="25dp"
             android:textStyle="bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:background="@drawable/rounded_btn"
+            android:textColor="@color/light_yellow"
+            android:padding="18dp"
+            android:layout_marginTop="16sp"
+            android:textSize="20sp"
+            android:id="@+id/sign_in_google"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:padding="18dp"
+            android:text="Already had an account?"
+            android:textColor="@color/light_yellow">
+
+        </TextView>
     </LinearLayout>
 
 </FrameLayout>
