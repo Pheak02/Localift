@@ -5,6 +5,7 @@
     <color name="dark_green">#015054</color>
     <color name="light_yellow">#EBF1CF</color>
     <color name="light_green">#840B4945</color>
+    <color name="disabled_light_green">#231E504C</color>
     <color name="grey">#857C7C</color>
     1E1E1E
 </resources>
