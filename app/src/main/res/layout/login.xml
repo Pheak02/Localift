@@ -21,7 +21,7 @@
             <ImageView
                 android:layout_width="300dp"
                 android:layout_height="200dp"
-                android:src="@drawable/localift_logo"/>
+                android:src="@drawable/local_lift_logo"/>
 
 
             <TextView

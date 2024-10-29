@@ -37,7 +37,7 @@
         <ImageView
             android:layout_width="189dp"
             android:layout_height="148dp"
-            android:src="@drawable/localLift_logo" />
+            android:src="@drawable/local_lift_logo" />
 
         <TextView
             android:id="@+id/textView"
