@@ -1,16 +1,14 @@
-package com.local.lift
+package com.local.lift.activity
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 //import androidx.navigation.ui.AppBarConfiguration.Builder.build
 import androidx.navigation.ui.NavigationUI.navigateUp
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import com.google.android.material.snackbar.Snackbar
+import com.local.lift.R
 import com.local.lift.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
