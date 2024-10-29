@@ -1,75 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Launch Page 1 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    android:background="@drawable/auth_background"
 
-    <!-- Background Image -->
+    tools:context=".Landing">
+
+
     <ImageView
-        android:id="@+id/backgroundImage"
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.23" />
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/launchpage_bg"
-        android:scaleType="centerCrop" />
+        app:layout_constraintEnd_toEndOf="@id/background"
+        app:layout_constraintStart_toStartOf="@id/background"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Grey overlay with transparency -->
-    <View
-        android:id="@+id/greyOverlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000" /> <!-- 50% transparency for grey (#80 is the alpha channel) -->
-
-    <!-- Content (Logo and Text) -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@drawable/sign_in_background">
-
-        <!-- Logo -->
-
-        <!-- Subtitle Text -->
-        <ImageView
-            android:layout_width="189dp"
-            android:layout_height="148dp"
-            android:src="@drawable/local_lift_logo" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Every Buy, a Better Life"
-            android:textColor="@color/green_light"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:background="@drawable/rounded_btn"
-            android:textColor="@color/light_yellow"
-            android:padding="18dp"
-            android:layout_marginTop="16sp"
-            android:textSize="20sp"
-            android:id="@+id/sign_in_google"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
             android:gravity="center"
-            android:padding="18dp"
-            android:text="Already had an account?"
-            android:textColor="@color/light_yellow">
+            android:orientation="vertical">
 
-        </TextView>
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/local_lift_logo" />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/every"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Every Buy, a Better Life!"
+                android:textColor="@color/light_yellow"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
