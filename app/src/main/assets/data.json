@@ -1,0 +1,130 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "bag",
+      "items": [
+        {
+          "id": 101,
+          "name": "Classic Leather Bag",
+          "image": "https://via.placeholder.com/150?text=Classic+Leather+Bag",
+          "price": 79.99
+        },
+        {
+          "id": 102,
+          "name": "Vintage Tote Bag",
+          "image": "https://via.placeholder.com/150?text=Vintage+Tote+Bag",
+          "price": 45.50
+        },
+        {
+          "id": 103,
+          "name": "Backpack with Multiple Pockets",
+          "image": "https://via.placeholder.com/150?text=Backpack+Multi+Pocket",
+          "price": 65.00
+        },
+        {
+          "id": 104,
+          "name": "Canvas Shoulder Bag",
+          "image": "https://via.placeholder.com/150?text=Canvas+Shoulder+Bag",
+          "price": 39.99
+        },
+        {
+          "id": 105,
+          "name": "Mini Crossbody Bag",
+          "image": "https://via.placeholder.com/150?text=Mini+Crossbody+Bag",
+          "price": 29.99
+        },
+        {
+          "id": 106,
+          "name": "Elegant Handbag",
+          "image": "https://via.placeholder.com/150?text=Elegant+Handbag",
+          "price": 99.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "clothes",
+      "items": [
+        {
+          "id": 201,
+          "name": "Denim Jacket",
+          "image": "https://via.placeholder.com/150?text=Denim+Jacket",
+          "price": 89.99
+        },
+        {
+          "id": 202,
+          "name": "Graphic T-Shirt",
+          "image": "https://via.placeholder.com/150?text=Graphic+T-Shirt",
+          "price": 25.99
+        },
+        {
+          "id": 203,
+          "name": "Slim Fit Jeans",
+          "image": "https://via.placeholder.com/150?text=Slim+Fit+Jeans",
+          "price": 49.99
+        },
+        {
+          "id": 204,
+          "name": "Cotton Polo Shirt",
+          "image": "https://via.placeholder.com/150?text=Cotton+Polo+Shirt",
+          "price": 29.99
+        },
+        {
+          "id": 205,
+          "name": "Hooded Sweatshirt",
+          "image": "https://via.placeholder.com/150?text=Hooded+Sweatshirt",
+          "price": 55.00
+        },
+        {
+          "id": 206,
+          "name": "Casual Shorts",
+          "image": "https://via.placeholder.com/150?text=Casual+Shorts",
+          "price": 34.99
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "shoes",
+      "items": [
+        {
+          "id": 301,
+          "name": "Casual Sneakers",
+          "image": "https://via.placeholder.com/150?text=Casual+Sneakers",
+          "price": 59.99
+        },
+        {
+          "id": 302,
+          "name": "Running Shoes",
+          "image": "https://via.placeholder.com/150?text=Running+Shoes",
+          "price": 85.50
+        },
+        {
+          "id": 303,
+          "name": "Formal Leather Shoes",
+          "image": "https://via.placeholder.com/150?text=Formal+Leather+Shoes",
+          "price": 110.00
+        },
+        {
+          "id": 304,
+          "name": "Beach Flip Flops",
+          "image": "https://via.placeholder.com/150?text=Beach+Flip+Flops",
+          "price": 15.00
+        },
+        {
+          "id": 305,
+          "name": "Hiking Boots",
+          "image": "https://via.placeholder.com/150?text=Hiking+Boots",
+          "price": 120.99
+        },
+        {
+          "id": 306,
+          "name": "Loafers",
+          "image": "https://via.placeholder.com/150?text=Loafers",
+          "price": 65.00
+        }
+      ]
+    }
+  ]
+}
