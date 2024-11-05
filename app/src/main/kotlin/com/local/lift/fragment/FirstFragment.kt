@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import com.local.lift.R
-import com.local.lift.databinding.FragmentFirstBinding
+import com.local.locallift.R
+import com.local.locallift.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
     private var binding: FragmentFirstBinding? = null

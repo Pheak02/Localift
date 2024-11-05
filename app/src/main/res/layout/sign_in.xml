@@ -58,7 +58,7 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toStartOf="@+id/sign_in_with_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sign_in_account" />
+             />
 
         <View
             android:layout_width="0dp"
@@ -69,7 +69,7 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sign_in_with_text"
-            app:layout_constraintTop_toBottomOf="@id/sign_in_account" />
+             />
 
     </FrameLayout>
 

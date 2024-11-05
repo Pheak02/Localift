@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import com.local.lift.R
-import com.local.lift.databinding.FragmentSecondBinding
+import com.local.locallift.R
+import com.local.locallift.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
     private var binding: FragmentSecondBinding? = null
