@@ -6,10 +6,10 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-//import androidx.navigation.ui.AppBarConfiguration.Builder.build
 import androidx.navigation.ui.NavigationUI.navigateUp
-import com.local.lift.R
-import com.local.lift.databinding.ActivityMainBinding
+import com.local.locallift.R
+import com.local.locallift.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private var appBarConfiguration: AppBarConfiguration? = null
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        setSupportActionBar(binding!!.toolbar)
+//        setSupportActionBar(binding!!.toolbar)
 
 //        val navController = findNavController(this, R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = Builder(navController.graph).build()

@@ -61,7 +61,7 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toStartOf="@+id/sign_up_with_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sign_up_account" />
+             />
 
         <View
             android:layout_width="0dp"
@@ -72,7 +72,7 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sign_up_with_text"
-            app:layout_constraintTop_toBottomOf="@id/sign_up_account" />
+             />
 
     </FrameLayout>
 
@@ -206,8 +206,7 @@
                 android:padding="12dp"
                 android:text="Sign up"
                 android:textColor="@color/light_yellow"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
