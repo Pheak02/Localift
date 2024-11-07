@@ -1,3 +1,6 @@
+package com.local.lift.repository
+
+import SignInRepository
 import com.local.lift.model.SignInRequest
 import com.local.lift.model.SignInResponse
 import com.local.locallift.api.AuthService
