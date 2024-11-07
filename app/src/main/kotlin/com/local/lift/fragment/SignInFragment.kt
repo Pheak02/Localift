@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.local.locallift.databinding.SignInBinding
 
-
 class SignInFragment : Fragment() {
     private var binding: SignInBinding? = null
 
