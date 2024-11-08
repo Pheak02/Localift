@@ -1,14 +1,14 @@
-// SignInViewModelFactory.kt
 package com.local.lift.viewmodel
 
-import SignInRepository
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.local.locallift.viewmodel.SignInViewModel
+import com.local.lift.repository.SignInRepositoryImpl
 
-class SignInViewModelFactory(private val repository: SignInRepository) : ViewModelProvider.Factory {
+class SignInViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SignInViewModel::class.java)) {
+            val repository = SignInRepositoryImpl(context)
             return SignInViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

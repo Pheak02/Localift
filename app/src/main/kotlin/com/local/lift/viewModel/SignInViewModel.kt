@@ -1,7 +1,8 @@
 // SignInViewModel.kt
-package com.local.locallift.viewmodel
+package com.local.lift.viewmodel
 
 import SignInRepository
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,20 +14,27 @@ import retrofit2.Response
 
 class SignInViewModel(private val repository: SignInRepository) : ViewModel() {
 
-    val signInState = MutableLiveData<APIState<SignInResponse>>()
+    private val _signInState = MutableLiveData<APIState<SignInResponse>>()
+    val signInState: LiveData<APIState<SignInResponse>> get() = _signInState
 
     fun signIn(email: String, password: String) {
-        signInState.value = APIState.Loading
+        _signInState.value = APIState.Loading
         viewModelScope.launch {
-            val response: Response<SignInResponse> = repository.signIn((SignInRequest(email, password)))
-            if (response.isSuccessful) {
-                response.body()?.let {
-                    signInState.value = APIState.Success(it)
-                } ?: run {
-                    signInState.value = APIState.Error("Unknown error occurred")
+            try {
+                val response: Response<SignInResponse> = repository.signIn(
+                    SignInRequest(id = 0, email = email, password = password, rememberMe = false)
+                )
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        _signInState.value = APIState.Success(it)
+                    } ?: run {
+                        _signInState.value = APIState.Error("Unknown error occurred")
+                    }
+                } else {
+                    _signInState.value = APIState.Error("Sign-in failed: ${response.message()}")
                 }
-            } else {
-                signInState.value = APIState.Error("Sign-in failed: ${response.message()}")
+            } catch (e: Exception) {
+                _signInState.value = APIState.Error("An error occurred: ${e.localizedMessage}")
             }
         }
     }
