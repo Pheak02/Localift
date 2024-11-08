@@ -1,61 +1,59 @@
 package com.local.lift.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
 import com.local.locallift.R
 import com.local.locallift.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
-    private var appBarConfiguration: AppBarConfiguration? = null
-    private var binding: ActivityMainBinding? = null
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
 
-//        setSupportActionBar(binding!!.toolbar)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
+        if (navHostFragment != null) {
+            val navController = navHostFragment.navController
+            appBarConfiguration = AppBarConfiguration(navController.graph)
 
-//        val navController = findNavController(this, R.id.nav_host_fragment_content_main)
-//        appBarConfiguration = Builder(navController.graph).build()
-//        setupActionBarWithNavController(this, navController, appBarConfiguration!!)
-//
-//        binding.fab.setOnClickListener(View.OnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAnchorView(R.id.fab)
-//                .setAction("Action", null).show()
-//        })
+            if (!isUserLoggedIn()) {
+                navController.navigate(R.id.signInFragment)
+            }
+        } else {
+            Log.e("MainActivity", "NavHostFragment not found")
+        }
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        // Your login status check logic
+        return false // Placeholder for actual login status check
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
-
-        if (id == R.id.action_settings) {
-            return true
+        return when (item.itemId) {
+            R.id.action_settings -> true
+            else -> super.onOptionsItemSelected(item)
         }
-
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(this, R.id.nav_host_fragment_content_main)
-        return navigateUp(navController, appBarConfiguration!!)
-                || super.onSupportNavigateUp()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
+        val navController = navHostFragment?.navController
+        return navController?.let { navigateUp(it, appBarConfiguration) } ?: super.onSupportNavigateUp()
     }
 }
