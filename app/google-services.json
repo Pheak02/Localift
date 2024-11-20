@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417891503706",
+    "project_id": "locallift-aeb0d",
+    "storage_bucket": "locallift-aeb0d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417891503706:android:3e2164f2cabff5aa825263",
+        "android_client_info": {
+          "package_name": "com.local.locallift"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1gMsw7iQZbC52ea1dpunEXauQ4yxumso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
