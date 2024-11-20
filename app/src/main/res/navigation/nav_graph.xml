@@ -8,11 +8,8 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.local.lift.fragment.SignInFragment"
-        android:label="Sign In"
+        android:label="SignIn"
         tools:layout="@layout/sign_in" />
-        <action
-        android:id="@+id/action_signInFragment_to_homeFragment"
-        app:destination="@id/sign_up" />
     <fragment
         android:id="@+id/product"
         android:name="com.local.lift.fragment.ProductCatFragment"

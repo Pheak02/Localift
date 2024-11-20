@@ -8,12 +8,12 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface AuthService {
-    @POST("sign-in")  // Update this path based on your actual endpoint
+    @POST("sign-in")
     suspend fun signIn(@Body request: SignInRequest): Response<SignInResponse>
 
     companion object {
         fun create(): AuthService {
-            return RetrofitInstance.api // Use the 'api' property here instead of 'retrofit'
+            return RetrofitInstance.api
         }
     }
 }

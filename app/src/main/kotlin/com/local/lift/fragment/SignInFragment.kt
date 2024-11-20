@@ -17,7 +17,6 @@ class SignInFragment : Fragment() {
     private var _binding: SignInBinding? = null
     private val binding get() = _binding!!
 
-    // Initialize ViewModel with SignInViewModelFactory that takes Context
     private val signInViewModel: SignInViewModel by viewModels {
         SignInViewModelFactory(requireContext())
     }
@@ -33,11 +32,9 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observe the sign-in state to handle UI changes
         signInViewModel.signInState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is APIState.Loading -> {
-                    // Optional: Show a loading indicator
                 }
                 is APIState.Success -> {
                     Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
