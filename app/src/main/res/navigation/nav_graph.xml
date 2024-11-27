@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,13 +8,15 @@
         android:id="@+id/signInFragment"
         android:name="com.local.lift.fragment.SignInFragment"
         android:label="Sign In"
-        tools:layout="@layout/sign_in" />
+        tools:layout="@layout/sign_in">
         <action
-        android:id="@+id/action_signInFragment_to_homeFragment"
-        app:destination="@id/sign_up" />
+            android:id="@+id/action_signInFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
     <fragment
-        android:id="@+id/product"
-        android:name="com.local.lift.fragment.ProductCatFragment"
+        android:id="@+id/productFragment"
+        android:name="com.local.lift.fragment.ProductFragment"
         android:label="Product"
         tools:layout="@layout/category1" />
 </navigation>

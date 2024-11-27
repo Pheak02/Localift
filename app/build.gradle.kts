@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -67,6 +68,7 @@ dependencies {
 
     // Image loading with Coil
     implementation("io.coil-kt:coil:2.2.2")
+    implementation("com.google.firebase:firebase-database:21.0.0")
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")

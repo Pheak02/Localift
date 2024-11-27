@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.local.locallift.R
 import com.local.locallift.databinding.ActivityMainBinding
 
@@ -32,11 +34,25 @@ class MainActivity : AppCompatActivity() {
         } else {
             Log.e("MainActivity", "NavHostFragment not found")
         }
+
+        // Firebase test code
+        testFirebaseConnection()
     }
 
     private fun isUserLoggedIn(): Boolean {
-        // Your login status check logic
-        return false // Placeholder for actual login status check
+        return false
+    }
+
+    private fun testFirebaseConnection() {
+        val database = Firebase.database
+        val myRef = database.getReference("message")
+        myRef.setValue("Hello, Locallift!")
+            .addOnSuccessListener {
+                Log.d("MainActivity", "Data written successfully!")
+            }
+            .addOnFailureListener { exception ->
+                Log.e("MainActivity", "Failed to write data", exception)
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
