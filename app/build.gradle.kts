@@ -66,12 +66,17 @@ dependencies {
     // Logging Interceptor for Retrofit
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
-    // Image loading with Coil
+    // Firebase dependencies
+    implementation("com.google.firebase:firebase-firestore:24.7.0")
     implementation("io.coil-kt:coil:2.2.2")
+    implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
     implementation("com.google.firebase:firebase-database:21.0.0")
+
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
 }

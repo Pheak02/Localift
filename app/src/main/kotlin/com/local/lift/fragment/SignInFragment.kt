@@ -85,6 +85,10 @@ class SignInFragment : Fragment() {
         binding.forgotPassword.setOnClickListener {
             Toast.makeText(requireContext(), "Forgot Password clicked", Toast.LENGTH_SHORT).show()
         }
+
+        binding.backToSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
+        }
     }
 
     override fun onDestroyView() {
