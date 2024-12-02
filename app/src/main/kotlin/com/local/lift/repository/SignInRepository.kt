@@ -1,7 +1,8 @@
-import com.local.lift.model.SignInRequest
-import com.local.lift.model.SignInResponse
+package com.local.lift.repository
+
+import com.local.lift.model.User
 import retrofit2.Response
 
 interface SignInRepository {
-    suspend fun signIn(signInRequest: SignInRequest): Response<SignInResponse>
+    suspend fun signIn(user: User): Response<User>
 }

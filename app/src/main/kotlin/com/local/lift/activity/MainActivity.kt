@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
-import com.google.firebase.ktx.Firebase
 import com.local.locallift.R
 import com.local.locallift.databinding.ActivityMainBinding
 import com.google.firebase.database.FirebaseDatabase
@@ -38,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", "NavHostFragment not found")
         }
 
-        // Firebase test code
         testFirebaseConnection()
     }
 

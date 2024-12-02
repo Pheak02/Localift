@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.local.lift.model.User
+import com.local.lift.utils.hashPassword
 import com.local.locallift.databinding.SignUpBinding
 import com.local.lift.viewmodel.SignUpViewModel
 import com.local.locallift.api.APIState
@@ -32,21 +34,23 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set up the sign-up button
         binding.signUp.setOnClickListener {
+            val fullName = binding.fullnameInput.text.toString().trim()
             val email = binding.emailInput.text.toString().trim()
             val password = binding.passwordInput.text.toString().trim()
-            val fullName = binding.fullnameInput.text.toString().trim()
+            val isAdmin = binding.role.isChecked
 
-            // Validate input fields
             if (email.isNotEmpty() && password.isNotEmpty() && fullName.isNotEmpty()) {
-                signUpViewModel.signUp(email, password, fullName)
+                val hashedPassword = hashPassword(password)
+                val role = if (isAdmin) "admin" else "user"
+
+                val user = User(email = email, fullName = fullName, hashedPassword = hashedPassword, role = role)
+                signUpViewModel.signUp(user)
             } else {
                 Toast.makeText(requireContext(), "Please fill in all fields.", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Navigate back to the sign-in screen
         binding.backToSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
@@ -55,16 +59,13 @@ class SignUpFragment : Fragment() {
         signUpViewModel.signUpState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
                 is APIState.Loading -> {
-                    // Show a simple toast for loading
                     Toast.makeText(requireContext(), "Registering user...", Toast.LENGTH_SHORT).show()
                 }
                 is APIState.Success -> {
-                    // Show success message and navigate to the sign-in screen
                     Toast.makeText(requireContext(), state.data, Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
+                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)  // Navigate to sign-in screen on success
                 }
                 is APIState.Error -> {
-                    // Show error message
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                 }
             }
