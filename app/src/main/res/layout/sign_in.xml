@@ -160,10 +160,10 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/remember_me"
+                    android:id="@+id/role"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Remember Me"
+                    android:text="Admin ?"
                     android:textColor="@color/grey" />
                 <TextView
                     android:id="@+id/forgot_password"
@@ -191,6 +191,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/back_to_sign_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

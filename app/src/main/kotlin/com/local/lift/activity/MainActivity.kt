@@ -8,14 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.local.locallift.R
 import com.local.locallift.databinding.ActivityMainBinding
+import com.google.firebase.database.FirebaseDatabase
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", "NavHostFragment not found")
         }
 
-        // Firebase test code
         testFirebaseConnection()
     }
 
@@ -44,9 +45,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun testFirebaseConnection() {
-        val database = Firebase.database
+        val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
-        myRef.setValue("Hello, Locallift!")
+        myRef.setValue("Hello, Locallift! Not sure its working or not")
             .addOnSuccessListener {
                 Log.d("MainActivity", "Data written successfully!")
             }

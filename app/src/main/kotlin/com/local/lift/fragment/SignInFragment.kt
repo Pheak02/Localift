@@ -69,7 +69,6 @@ class SignInFragment : Fragment() {
 
         }
 
-        // Set up button click listener for sign-in
         binding.signIn.setOnClickListener {
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
@@ -81,9 +80,12 @@ class SignInFragment : Fragment() {
             }
         }
 
-        // Forgot password listener
         binding.forgotPassword.setOnClickListener {
             Toast.makeText(requireContext(), "Forgot Password clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.backToSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
     }
 
