@@ -50,16 +50,16 @@ class SignInFragment : Fragment() {
                     Log.d("SignInFragment", "Current destination: ${currentDestination?.label}")
 
                     // Check if the current destination is SignInFragment
-                    if (currentDestination?.id == R.id.signInFragment) {
-                        try {
-                            navController.navigate(R.id.action_signInFragment_to_productFragment)
-                            Log.d("SignInFragment", "Navigation to ProductFragment triggered successfully.")
-                        } catch (e: Exception) {
-                            Log.e("SignInFragment", "Navigation error: ${e.message}", e)
-                        }
-                    } else {
-                        Log.e("SignInFragment", "Current destination is not SignInFragment. Navigation skipped.")
-                    }
+//                    if (currentDestination?.id == R.id.signInFragment) {
+//                        try {
+//                            navController.navigate(R.id.action_signInFragment_to_productFragment)
+//                            Log.d("SignInFragment", "Navigation to ProductFragment triggered successfully.")
+//                        } catch (e: Exception) {
+//                            Log.e("SignInFragment", "Navigation error: ${e.message}", e)
+//                        }
+//                    } else {
+//                        Log.e("SignInFragment", "Current destination is not SignInFragment. Navigation skipped.")
+//                    }
                 }
                 is APIState.Error -> {
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
@@ -84,9 +84,9 @@ class SignInFragment : Fragment() {
             Toast.makeText(requireContext(), "Forgot Password clicked", Toast.LENGTH_SHORT).show()
         }
 
-        binding.backToSignIn.setOnClickListener {
-            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
-        }
+//        binding.backToSignIn.setOnClickListener {
+//            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
+//        }
     }
 
     override fun onDestroyView() {

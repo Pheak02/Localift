@@ -2,34 +2,134 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signInFragment">
+    app:startDestination="@id/activityFragment">
 
+    <!-- ActivityFragment -->
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.local.lift.fragment.ActivityFragment"
+        android:label="Activity"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/activity_to_homePage"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+
+    <!-- HomePageFragment -->
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.local.lift.fragment.HomePageFragment"
+        android:label="Home Page"
+        tools:layout="@layout/home_page">
+        <action
+            android:id="@+id/homePage_to_product"
+            app:destination="@id/productFragment" />
+    </fragment>
+
+    <!-- ProductFragment -->
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.local.lift.fragment.ProductFragment"
+        android:label="Product"
+        tools:layout="@layout/category1">
+        <action
+            android:id="@+id/product_to_productDetail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <!-- ProductDetailFragment -->
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.local.lift.fragment.ProductDetailFragment"
+        android:label="Product Detail"
+        tools:layout="@layout/product_detail">
+        <action
+            android:id="@+id/productDetail_to_shoppingCart"
+            app:destination="@id/shoppingCartFragment" />
+    </fragment>
+
+    <!-- ShoppingCartFragment -->
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.local.lift.fragment.ShoppingCartFragment"
+        android:label="Shopping Cart"
+        tools:layout="@layout/shopping_cart">
+        <action
+            android:id="@+id/shoppingCart_to_checkout"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <!-- CheckoutFragment -->
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.local.lift.fragment.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/checkout">
+        <action
+            android:id="@+id/checkout_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- SignInFragment -->
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.local.lift.fragment.SignInFragment"
         android:label="Sign In"
         tools:layout="@layout/sign_in">
         <action
-            android:id="@+id/action_signInFragment_to_signUpFragment"
+            android:id="@+id/signIn_to_signUp"
             app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_signInFragment_to_productFragment"
-            app:destination="@id/productFragment" />
     </fragment>
 
+    <!-- ForgetPassword -->
+    <fragment
+        android:id="@+id/forgetPassword"
+        android:name="com.local.lift.fragment.ForgetPasswordFragment"
+        android:label="Forget Password"
+        tools:layout="@layout/forget_password">
+        <action
+            android:id="@+id/forget_password_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- ForgetPassword Code -->
+    <fragment
+        android:id="@+id/forgetPasswordCode"
+        android:name="com.local.lift.fragment.ForgetPasswordCodeFragment"
+        android:label="Forget Password Code"
+        tools:layout="@layout/verified_forget_password">
+        <action
+            android:id="@+id/forget_password_code_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- Success ForgetPassword -->
+    <fragment
+        android:id="@+id/SuccessForgetPassword"
+        android:name="com.local.lift.fragment.SuccessForgetPasswordFragment"
+        android:label="Success Forget Password"
+        tools:layout="@layout/success_forget_password">
+        <action
+            android:id="@+id/success_forget_password_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- NewPassword -->
+    <fragment
+        android:id="@+id/NewPassword"
+        android:name="com.local.lift.fragment.NewPasswordFragment"
+        android:label="New Password"
+        tools:layout="@layout/new_password">
+        <action
+            android:id="@+id/new_password_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- SignUpFragment -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.local.lift.fragment.SignUpFragment"
         android:label="Sign Up"
-        tools:layout="@layout/sign_up">
-        <action
-            android:id="@+id/action_signUpFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
-    </fragment>
+        tools:layout="@layout/sign_up" />
 
-    <fragment
-        android:id="@+id/productFragment"
-        android:name="com.local.lift.fragment.ProductFragment"
-        android:label="Product"
-        tools:layout="@layout/category1" />
 </navigation>
