@@ -2,22 +2,17 @@ package com.local.lift.activity
 
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.navigateUp
+import androidx.navigation.ui.NavigationUI
 import com.local.locallift.R
 import com.local.locallift.databinding.ActivityMainBinding
 import com.google.firebase.database.FirebaseDatabase
 
-
-
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +20,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Get the NavHostFragment and check if it's available
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
         if (navHostFragment != null) {
             val navController = navHostFragment.navController
             appBarConfiguration = AppBarConfiguration(navController.graph)
 
-            if (!isUserLoggedIn()) {
-                navController.navigate(R.id.signInFragment)
-            }
+            // First fragment loaded will be ActivityFragment, no login check here
+            navController.navigate(R.id.activityFragment)
         } else {
             Log.e("MainActivity", "NavHostFragment not found")
         }
@@ -40,14 +35,10 @@ class MainActivity : AppCompatActivity() {
         testFirebaseConnection()
     }
 
-    private fun isUserLoggedIn(): Boolean {
-        return false
-    }
-
     private fun testFirebaseConnection() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
-        myRef.setValue("Hello, Locallift! Not sure its working or not")
+        myRef.setValue("Hello, Locallift! Not sure if it's working or not")
             .addOnSuccessListener {
                 Log.d("MainActivity", "Data written successfully!")
             }
@@ -56,21 +47,9 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
         val navController = navHostFragment?.navController
-        return navController?.let { navigateUp(it, appBarConfiguration) } ?: super.onSupportNavigateUp()
+        return navController?.let { NavigationUI.navigateUp(it, appBarConfiguration) } ?: super.onSupportNavigateUp()
     }
 }
