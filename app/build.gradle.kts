@@ -18,8 +18,19 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    signingConfigs {
+//        create("release") {
+//            storeFile = file("/Users/macos/Desktop/VisitMe.jks")
+//            storePassword = "Welcome.01"
+//            keyAlias = "VisitMe"
+//            keyPassword = "Welcome.01"
+//        }
+//    }
+
     buildTypes {
         release {
+//            signingConfig = signingConfigs.getByName("release")
+            // make output file is smaller, prevent our APK file to be covert or decompiled
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -27,6 +38,34 @@ android {
             )
         }
     }
+
+//    flavorDimensions += "LocalLift"
+//    productFlavors {
+//    create("dev") {
+//        dimension = "LocalLift"
+//        applicationId = "com.local.locallift.dev"
+//        resValue("string", "app_name", "LocalLift Test" )
+//        buildConfigField("String", "apiBaseUrl", "\"https://locallift-aeb0d-default-rtdb.firebaseio.com/test\"")
+//
+//    }
+//    create("prd") {
+//        dimension = "LocalLift"
+//        applicationId = "com.local.locallift"
+//        resValue("string", "app_name", "LocalLift" )
+//        buildConfigField("String", "apiBaseUrl", "\"https://locallift-aeb0d-default-rtdb.firebaseio.com/\"")
+//
+//    }
+//    create("premium") {
+//        buildConfigField("Bool", "isPremium", "true")
+//
+//    }
+//    create("free") {
+//        buildConfigField("Bool", "isFree", "false")
+//
+//    }
+
+//    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,6 +75,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+//        buildConfig = true
     }
 }
 
