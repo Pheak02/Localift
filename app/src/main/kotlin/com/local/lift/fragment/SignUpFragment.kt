@@ -51,25 +51,25 @@ class SignUpFragment : Fragment() {
             }
         }
 
-        binding.backToSignIn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
-        }
+//        binding.backToSignIn.setOnClickListener {
+//            findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
+//        }
 
         // Observe the sign-up state
-        signUpViewModel.signUpState.observe(viewLifecycleOwner, Observer { state ->
-            when (state) {
-                is APIState.Loading -> {
-                    Toast.makeText(requireContext(), "Registering user...", Toast.LENGTH_SHORT).show()
-                }
-                is APIState.Success -> {
-                    Toast.makeText(requireContext(), state.data, Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)  // Navigate to sign-in screen on success
-                }
-                is APIState.Error -> {
-                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
+//        signUpViewModel.signUpState.observe(viewLifecycleOwner, Observer { state ->
+//            when (state) {
+//                is APIState.Loading -> {
+//                    Toast.makeText(requireContext(), "Registering user...", Toast.LENGTH_SHORT).show()
+//                }
+//                is APIState.Success -> {
+//                    Toast.makeText(requireContext(), state.data, Toast.LENGTH_SHORT).show()
+//                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)  // Navigate to sign-in screen on success
+//                }
+//                is APIState.Error -> {
+//                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        })
     }
 
     override fun onDestroyView() {
