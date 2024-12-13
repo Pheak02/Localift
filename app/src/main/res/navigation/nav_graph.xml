@@ -79,12 +79,12 @@
         android:name="com.local.lift.fragment.ProductFragment"
         android:label="Home Page"
         tools:layout="@layout/product">
-<!--        <action-->
-<!--            android:id="@+id/action_productFragment_to_userProfileFragment"-->
-<!--            app:destination="@id/userProfileFragment" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_productFragment_to_category1Fragment"-->
-<!--            app:destination="@id/category1Fragment" />-->
+        <action
+            android:id="@+id/action_productFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_category1Fragment"
+            app:destination="@id/category1Fragment" />
     </fragment>
 
     <!-- UserProfileFragment -->

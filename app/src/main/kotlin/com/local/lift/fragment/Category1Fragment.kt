@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.local.locallift.R
 import com.local.locallift.databinding.Category1Binding
 
 class Category1Fragment : Fragment() {
@@ -22,6 +24,10 @@ class Category1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.catNext.setOnClickListener {
+            findNavController().navigate(R.id.action_category1Fragment_to_productDetailFragment)
+        }
     }
 
     override fun onDestroyView() {
