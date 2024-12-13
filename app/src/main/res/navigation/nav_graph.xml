@@ -4,6 +4,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/signInFragment">
 
+    <!-- SignInFragment -->
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.local.lift.fragment.SignInFragment"
@@ -17,6 +18,7 @@
             app:destination="@id/productFragment" />
     </fragment>
 
+    <!-- SignUpFragment -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.local.lift.fragment.SignUpFragment"
@@ -27,9 +29,145 @@
             app:destination="@id/signInFragment" />
     </fragment>
 
+    <!-- ForgetPasswordFragment -->
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.local.lift.fragment.ForgetPasswordFragment"
+        android:label="Forget Password"
+        tools:layout="@layout/forget_password">
+        <action
+            android:id="@+id/action_forgetPassword_to_signIn"
+            app:destination="@id/forgetPasswordCodeFragment" />
+    </fragment>
+
+    <!-- ForgetPasswordCodeFragment -->
+    <fragment
+        android:id="@+id/forgetPasswordCodeFragment"
+        android:name="com.local.lift.fragment.ForgetPasswordCodeFragment"
+        android:label="Verify Code"
+        tools:layout="@layout/verified_forget_password">
+        <action
+            android:id="@+id/action_forgetPasswordCode_to_signIn"
+            app:destination="@id/successForgetPasswordFragment" />
+    </fragment>
+
+    <!-- SuccessForgetPasswordFragment -->
+    <fragment
+        android:id="@+id/successForgetPasswordFragment"
+        android:name="com.local.lift.fragment.SuccessForgetPasswordFragment"
+        android:label="Password Reset Success"
+        tools:layout="@layout/success_forget_password">
+        <action
+            android:id="@+id/action_successForgetPassword_to_signIn"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
+
+    <!-- NewPasswordFragment -->
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.local.lift.fragment.NewPasswordFragment"
+        android:label="Set New Password"
+        tools:layout="@layout/new_password">
+        <action
+            android:id="@+id/action_newPassword_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <!-- ProductFragment -->
     <fragment
         android:id="@+id/productFragment"
         android:name="com.local.lift.fragment.ProductFragment"
-        android:label="Product"
-        tools:layout="@layout/category1" />
+        android:label="Home Page"
+        tools:layout="@layout/product">
+<!--        <action-->
+<!--            android:id="@+id/action_productFragment_to_userProfileFragment"-->
+<!--            app:destination="@id/userProfileFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_productFragment_to_category1Fragment"-->
+<!--            app:destination="@id/category1Fragment" />-->
+    </fragment>
+
+    <!-- UserProfileFragment -->
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.local.lift.fragment.UserProfileFragment"
+        android:label="User Profile"
+        tools:layout="@layout/user_profile" />
+
+    <!-- Category1Fragment -->
+    <fragment
+        android:id="@+id/category1Fragment"
+        android:name="com.local.lift.fragment.Category1Fragment"
+        android:label="Category 1"
+        tools:layout="@layout/category1">
+        <action
+            android:id="@+id/action_category1Fragment_to_category2Fragment"
+            app:destination="@id/category2Fragment" />
+        <action
+            android:id="@+id/action_category1Fragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <!-- Category2Fragment -->
+    <fragment
+        android:id="@+id/category2Fragment"
+        android:name="com.local.lift.fragment.Category2Fragment"
+        android:label="Category 2"
+        tools:layout="@layout/category2">
+        <action
+            android:id="@+id/action_category2Fragment_to_category3Fragment"
+            app:destination="@id/category3Fragment" />
+    </fragment>
+
+    <!-- Category3Fragment -->
+    <fragment
+        android:id="@+id/category3Fragment"
+        android:name="com.local.lift.fragment.Category3Fragment"
+        android:label="Category 3"
+        tools:layout="@layout/category3" />
+
+    <!-- ProductDetailFragment -->
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.local.lift.fragment.ProductDetailFragment"
+        android:label="Product Details"
+        tools:layout="@layout/product_detail">
+        <action
+            android:id="@+id/action_productDetailFragment_to_shoppingCartFragment"
+            app:destination="@id/shoppingCartFragment" />
+    </fragment>
+
+    <!-- ShoppingCartFragment -->
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.local.lift.fragment.ShoppingCartFragment"
+        android:label="Shopping Cart"
+        tools:layout="@layout/shopping_cart">
+        <action
+            android:id="@+id/action_shoppingCartFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <!-- CheckoutFragment -->
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.local.lift.fragment.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/checkout">
+        <action
+            android:id="@+id/action_checkoutFragment_to_paymentSuccessFragment"
+            app:destination="@id/paymentSuccessFragment" />
+    </fragment>
+
+    <!-- PaymentSuccessFragment -->
+    <fragment
+        android:id="@+id/paymentSuccessFragment"
+        android:name="com.local.lift.fragment.PaymentSuccessFragment"
+        android:label="Payment Success"
+        tools:layout="@layout/payment_success" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_paymentSuccessFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
 </navigation>
