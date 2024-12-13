@@ -63,7 +63,7 @@ class SignUpFragment : Fragment() {
                 }
                 is APIState.Success -> {
                     Toast.makeText(requireContext(), state.data, Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)  // Navigate to sign-in screen on success
+                    findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
                 }
                 is APIState.Error -> {
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()

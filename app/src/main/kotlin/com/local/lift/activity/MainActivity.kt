@@ -13,7 +13,6 @@ import com.local.locallift.databinding.ActivityMainBinding
 import com.google.firebase.database.FirebaseDatabase
 
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
