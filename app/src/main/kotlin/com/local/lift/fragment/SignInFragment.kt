@@ -42,31 +42,20 @@ class SignInFragment : Fragment() {
                     Log.d("SignInFragment", "Login in progress...")
                 }
                 is APIState.Success -> {
-                    Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
-                    Log.d("SignInFragment", "Attempting to navigate...")
-
-                    val navController = findNavController()
-                    val currentDestination = navController.currentDestination
-                    Log.d("SignInFragment", "Current destination: ${currentDestination?.label}")
-
-                    // Check if the current destination is SignInFragment
-                    if (currentDestination?.id == R.id.signInFragment) {
-                        try {
-                            navController.navigate(R.id.action_signInFragment_to_productFragment)
-                            Log.d("SignInFragment", "Navigation to ProductFragment triggered successfully.")
-                        } catch (e: Exception) {
-                            Log.e("SignInFragment", "Navigation error: ${e.message}", e)
-                        }
+                    val user = state.data
+                    if (user.status == "success") {
+                        Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_signInFragment_to_productFragment)
                     } else {
-                        Log.e("SignInFragment", "Current destination is not SignInFragment. Navigation skipped.")
+                        Toast.makeText(requireContext(), "Login failed: ${user.status}", Toast.LENGTH_SHORT).show()
+                        Log.e("SignInFragment", "Login failed with status: ${user.status}")
                     }
                 }
                 is APIState.Error -> {
-                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Your email or password is not correct.", Toast.LENGTH_SHORT).show()
                     Log.e("SignInFragment", "Login error: ${state.message}")
                 }
             }
-
         }
 
         binding.signIn.setOnClickListener {
@@ -84,7 +73,7 @@ class SignInFragment : Fragment() {
             Toast.makeText(requireContext(), "Forgot Password clicked", Toast.LENGTH_SHORT).show()
         }
 
-        binding.backToSignIn.setOnClickListener {
+        binding.backToSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
     }

@@ -11,14 +11,12 @@ import retrofit2.http.Query
 
 interface AuthService {
 
-
     @POST("users.json")
     suspend fun signUp(@Body user: User): Response<Void>
 
     @GET("users.json")
     suspend fun signIn(@Query("email") email: String): Response<Map<String, User>>
 
-    // Companion object to create Retrofit instance
     companion object {
         private const val BASE_URL = "https://locallift-aeb0d-default-rtdb.firebaseio.com/"
 

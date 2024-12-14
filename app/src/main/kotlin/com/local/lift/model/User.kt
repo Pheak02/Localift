@@ -6,5 +6,7 @@ data class User(
     val email: String,
     val password: String? = null,
     val hashedPassword: String? = null,
-    val role: String = "user"
+    val role: String = "user",
+    val status: String = "success",
+
 )
