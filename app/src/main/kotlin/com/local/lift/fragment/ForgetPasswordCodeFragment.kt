@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.local.locallift.R
 import com.local.locallift.databinding.VerifiedForgetPasswordBinding
 
 class ForgetPasswordCodeFragment : Fragment() {
@@ -22,6 +24,9 @@ class ForgetPasswordCodeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.verify.setOnClickListener {
+            findNavController().navigate(R.id.action_forgetPasswordCode_to_successForgetPassword)
+        }
     }
 
     override fun onDestroyView() {

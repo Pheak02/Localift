@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_signInFragment_to_productFragment"
             app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgetPwdFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
 
     <!-- SignUpFragment -->
@@ -36,7 +39,7 @@
         android:label="Forget Password"
         tools:layout="@layout/forget_password">
         <action
-            android:id="@+id/action_forgetPassword_to_signIn"
+            android:id="@+id/action_forgetPassword_to_forgetPwdCode"
             app:destination="@id/forgetPasswordCodeFragment" />
     </fragment>
 
@@ -47,7 +50,7 @@
         android:label="Verify Code"
         tools:layout="@layout/verified_forget_password">
         <action
-            android:id="@+id/action_forgetPasswordCode_to_signIn"
+            android:id="@+id/action_forgetPasswordCode_to_successForgetPassword"
             app:destination="@id/successForgetPasswordFragment" />
     </fragment>
 
@@ -58,7 +61,7 @@
         android:label="Password Reset Success"
         tools:layout="@layout/success_forget_password">
         <action
-            android:id="@+id/action_successForgetPassword_to_signIn"
+            android:id="@+id/action_successForgetPassword_to_newPwd"
             app:destination="@id/newPasswordFragment" />
     </fragment>
 
