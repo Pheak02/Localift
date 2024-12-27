@@ -1,0 +1,37 @@
+[
+  {
+    "date": "2024-11-01",
+    "billing_name": "John Doe",
+    "amount": 120.50,
+    "status": "Completed",
+    "order_num": "ORD123456"
+  },
+  {
+    "date": "2024-11-05",
+    "billing_name": "Jane Smith",
+    "amount": 89.99,
+    "status": "Pending",
+    "order_num": "ORD123457"
+  },
+  {
+    "date": "2024-11-10",
+    "billing_name": "Alice Johnson",
+    "amount": 200.75,
+    "status": "Shipped",
+    "order_num": "ORD123458"
+  },
+  {
+    "date": "2024-11-15",
+    "billing_name": "Bob Brown",
+    "amount": 50.00,
+    "status": "Cancelled",
+    "order_num": "ORD123459"
+  },
+  {
+    "date": "2024-11-20",
+    "billing_name": "Charlie Wilson",
+    "amount": 75.25,
+    "status": "Completed",
+    "order_num": "ORD123460"
+  }
+]
