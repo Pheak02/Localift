@@ -1,22 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/auth_background"
+
+tools:context=".PaymentSuccessActivity">
+
+
+<ImageView
+    android:id="@+id/background"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/card_view"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHeight_percent="0.23" />
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/auth_background"
-    tools:context=".PaymentSuccessActivity">
+    app:layout_constraintBottom_toBottomOf="@+id/card_view"
+    app:layout_constraintEnd_toEndOf="@id/background"
+    app:layout_constraintStart_toStartOf="@id/background"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/payment_success"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/dark_green"
-        android:padding="12dp"
-        android:text="Next"
-        android:textColor="@color/light_yellow"
-        android:textSize="20sp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/local_lift_logo" />
+
+        <TextView
+            android:id="@+id/every"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Every Buy, a Better Life!"
+            android:textColor="@color/light_yellow"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sign_up_with_text"
+        android:id="@+id/forget_password" />
+
+</FrameLayout>
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_view"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:cardElevation="4dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHeight_percent="0.8"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/background"
+    app:cardCornerRadius="32dp"
+    app:cardBackgroundColor="@android:color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+        <TextView
+            android:id="@+id/welcome_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Thank you for supporting  us! "
+            android:textColor="@color/dark_green"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/verified" />
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="20dp"
+            android:text="Your support makes a big difference to our community and helps local businesses thrive. We’re grateful to have you with us on this journey! "
+            android:textColor="@color/dark_green" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/round_button"
+            android:padding="12dp"
+            android:text="Continue Shopping"
+            android:textColor="@color/light_yellow"
+            android:textSize="20sp"
+            />
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
