@@ -76,6 +76,10 @@ class SignInFragment : Fragment() {
         binding.backToSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
+
+        binding.forgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgetPwdFragment)
+        }
     }
 
     override fun onDestroyView() {
