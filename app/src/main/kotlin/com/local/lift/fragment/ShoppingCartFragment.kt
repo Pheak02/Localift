@@ -24,7 +24,7 @@ class ShoppingCartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.shoppingCart.setOnClickListener {
+        binding.checkoutButton.setOnClickListener {
             findNavController().navigate(R.id.action_shoppingCartFragment_to_checkoutFragment)
         }
     }
