@@ -218,7 +218,6 @@
                 android:gravity="center"
                 android:text="Already have an account? Sign in"
                 android:textColor="@color/dark_green" />
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
