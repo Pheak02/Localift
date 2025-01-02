@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.local.locallift.R
 import com.local.locallift.databinding.ForgetPasswordBinding
+import com.local.lift.utils.EmailUtils
 
 class ForgetPasswordFragment : Fragment() {
 
@@ -24,13 +25,28 @@ class ForgetPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.submit.setOnClickListener {
-            findNavController().navigate(R.id.action_forgetPassword_to_forgetPwdCode)
+            val email = binding.emailInput.text.toString()
+
+            if (email.isNotEmpty()) {
+                val verificationCode = generateVerificationCode()
+                // Send the verification email
+                EmailUtils.sendVerificationEmail(email, verificationCode)
+                findNavController().navigate(R.id.action_forgetPassword_to_forgetPwdCode)
+            } else {
+                // Show an error message if the email is empty
+                binding.emailInput.error = "Email is required"
+            }
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun generateVerificationCode(): String {
+        return (100000..999999).random().toString()
     }
 }
