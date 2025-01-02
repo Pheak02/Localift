@@ -31,11 +31,9 @@ class ForgetPasswordFragment : Fragment() {
 
             if (email.isNotEmpty()) {
                 val verificationCode = generateVerificationCode()
-                // Send the verification email
                 EmailUtils.sendVerificationEmail(email, verificationCode)
                 findNavController().navigate(R.id.action_forgetPassword_to_forgetPwdCode)
             } else {
-                // Show an error message if the email is empty
                 binding.emailInput.error = "Email is required"
             }
         }
