@@ -39,6 +39,7 @@ class ForgetPasswordFragment : Fragment() {
             if (email.isNotEmpty()) {
                 val verificationCode = CodeUtils.generateVerificationCode()
                 verificationViewModel.verificationCode = verificationCode
+                verificationViewModel.email = email
                 EmailUtils.sendVerificationEmail(email, verificationCode)
                 findNavController().navigate(R.id.action_forgetPassword_to_forgetPwdCode)
             } else {
