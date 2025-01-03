@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.local.lift.utils.CodeUtils
+import com.local.lift.viewmodel.VerificationViewModel
 import androidx.navigation.fragment.findNavController
 import com.local.locallift.R
 import com.local.locallift.databinding.ForgetPasswordBinding
@@ -14,6 +17,8 @@ class ForgetPasswordFragment : Fragment() {
 
     private var _binding: ForgetPasswordBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var verificationViewModel: VerificationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +31,14 @@ class ForgetPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        verificationViewModel = ViewModelProvider(requireActivity()).get(VerificationViewModel::class.java)
+
         binding.submit.setOnClickListener {
             val email = binding.emailInput.text.toString()
 
             if (email.isNotEmpty()) {
-                val verificationCode = generateVerificationCode()
+                val verificationCode = CodeUtils.generateVerificationCode()
+                verificationViewModel.verificationCode = verificationCode
                 EmailUtils.sendVerificationEmail(email, verificationCode)
                 findNavController().navigate(R.id.action_forgetPassword_to_forgetPwdCode)
             } else {
@@ -42,9 +50,5 @@ class ForgetPasswordFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun generateVerificationCode(): String {
-        return (100000..999999).random().toString()
     }
 }

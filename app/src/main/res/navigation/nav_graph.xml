@@ -49,6 +49,9 @@
         android:name="com.local.lift.fragment.ForgetPasswordCodeFragment"
         android:label="Verify Code"
         tools:layout="@layout/verified_forget_password">
+        <argument
+            android:name="verificationCode"
+            app:argType="string" />
         <action
             android:id="@+id/action_forgetPasswordCode_to_successForgetPassword"
             app:destination="@id/successForgetPasswordFragment" />
