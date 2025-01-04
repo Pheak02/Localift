@@ -34,21 +34,16 @@ class NewPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Access the shared VerificationViewModel
         verificationViewModel = ViewModelProvider(requireActivity()).get(VerificationViewModel::class.java)
         val email = verificationViewModel.email
 
-        // Check if email is null or empty
         if (email.isNullOrEmpty()) {
             Toast.makeText(requireContext(), "Email is missing", Toast.LENGTH_SHORT).show()
-            findNavController().popBackStack() // Navigate back if email is not available
             return
         }
 
-        // Initialize ResetPasswordViewModel
         resetPasswordViewModel = ViewModelProvider(this).get(ResetPasswordViewModel::class.java)
 
-        // Observe reset password state
         resetPasswordViewModel.resetPasswordState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is APIState.Loading -> Log.d("NewPasswordFragment", "Reset in progress...")

@@ -16,13 +16,13 @@ class ResetPasswordViewModel : ViewModel() {
     private val _resetPasswordState = MutableLiveData<APIState<String>>()
     val resetPasswordState: LiveData<APIState<String>> get() = _resetPasswordState
 
-    fun resetPassword(userId: String, newPassword: String) {
+    fun resetPassword(email: String, newPassword: String) {
         viewModelScope.launch {
             _resetPasswordState.postValue(APIState.Loading)
 
             try {
                 val user = User(email = email, password = newPassword)
-                val response = authService.updatePassword(userId, user)
+                val response = authService.updatePassword(email, user)
 
                 if (response.isSuccessful) {
                     _resetPasswordState.postValue(APIState.Success("Password reset successfully"))
