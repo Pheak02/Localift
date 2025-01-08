@@ -66,6 +66,7 @@ class NewPasswordFragment : Fragment() {
 
                 resetPasswordViewModel.resetPassword(email, hashedPassword)
                 Log.e("Email", email)
+                Log.e("Hashed Password", hashedPassword)
             } else {
                 Toast.makeText(requireContext(), "Passwords do not match or are empty.", Toast.LENGTH_SHORT).show()
             }

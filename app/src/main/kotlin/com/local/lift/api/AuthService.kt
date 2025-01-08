@@ -19,8 +19,14 @@ interface AuthService {
     @GET("users.json")
     suspend fun signIn(@Query("email") email: String): Response<Map<String, User>>
 
+    @GET("users.json")
+    suspend fun getUsers(): Response<Map<String, User>>
+
     @PATCH("users/{userId}.json")
-    suspend fun updatePassword(@Query("email") email: String, @Body user: User): Response<Void>
+    suspend fun updatePassword(
+        @Path("userId") userId: String,
+        @Body updates: Map<String, String>
+    ): Response<Void>
 
     companion object {
         private const val BASE_URL = "https://locallift-aeb0d-default-rtdb.firebaseio.com/"
