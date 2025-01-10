@@ -7,6 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.http.GET
+import retrofit2.http.PATCH
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface AuthService {
@@ -16,6 +18,15 @@ interface AuthService {
 
     @GET("users.json")
     suspend fun signIn(@Query("email") email: String): Response<Map<String, User>>
+
+    @GET("users.json")
+    suspend fun getUsers(): Response<Map<String, User>>
+
+    @PATCH("users/{userId}.json")
+    suspend fun updatePassword(
+        @Path("userId") userId: String,
+        @Body updates: Map<String, String>
+    ): Response<Void>
 
     companion object {
         private const val BASE_URL = "https://locallift-aeb0d-default-rtdb.firebaseio.com/"

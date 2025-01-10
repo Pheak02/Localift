@@ -27,15 +27,25 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
+    }
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/LICENSE.txt")
     }
 }
 
@@ -74,6 +84,9 @@ dependencies {
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
 
+    // JavaMail
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
@@ -82,5 +95,4 @@ dependencies {
 
     //load image
     implementation("com.squareup.picasso:picasso:2.8")
-
 }
