@@ -1,4 +1,4 @@
-package com.local.lift.viewmodel
+package com.local.lift.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

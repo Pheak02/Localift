@@ -1,4 +1,4 @@
-package com.local.lift.viewmodel
+package com.local.lift.viewModel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
