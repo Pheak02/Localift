@@ -80,6 +80,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:24.7.0")
     implementation("io.coil-kt:coil:2.2.2")
     implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
+    implementation ("com.google.firebase:firebase-auth:21.5.0")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("androidx.recyclerview:recyclerview:1.3.1")

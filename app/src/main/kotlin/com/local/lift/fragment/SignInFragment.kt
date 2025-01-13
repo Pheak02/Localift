@@ -7,16 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.local.lift.viewModel.SharedViewModel
 import com.local.locallift.databinding.SignInBinding
-import com.local.lift.viewmodel.SignInViewModel
-import com.local.lift.viewmodel.SignInViewModelFactory
+import com.local.lift.viewModel.SignInViewModel
+import com.local.lift.viewModel.SignInViewModelFactory
 import com.local.locallift.R
 import com.local.locallift.api.APIState
 
 class SignInFragment : Fragment() {
 
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private var _binding: SignInBinding? = null
     private val binding get() = _binding!!
 
@@ -44,6 +47,7 @@ class SignInFragment : Fragment() {
                 is APIState.Success -> {
                     val user = state.data
                     if (user.status == "success") {
+                        user.fullName?.let { sharedViewModel.setUserFullName(it) }
                         Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.action_signInFragment_to_productFragment)
                     } else {
