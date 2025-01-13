@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="Hi, User!"
         android:textColor="@color/dark_green"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -196,7 +195,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8sp"
                 android:layout_weight="1"
-                android:text="Legal & Privacy"
+                android:text="Legal &amp; Privacy"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
