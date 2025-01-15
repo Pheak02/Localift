@@ -17,7 +17,7 @@ class OrderViewModel : ViewModel() {
     val orderState: LiveData<ApiState<List<Order>>> get() = _orderState
 
     fun loadOrders() {
-        val apiService = ApiManager.getApiService()
+        val apiService = ApiManager.getDataService()
         _orderState.postValue(ApiState(State.loading, null))
 
         viewModelScope.launch {
