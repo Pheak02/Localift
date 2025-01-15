@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:src="@drawable/bag_2"
+            android:scaleType="centerCrop"
+            android:id="@+id/productDetail"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/productNameDetail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Price"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/productPriceDetail"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Description"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/productDescription"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:text="+"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:background="@drawable/round_button2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="1"
+                android:textSize="30dp"
+                android:textColor="@color/black" />
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:background="@drawable/round_button2"/>
+
+        </LinearLayout>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:text="Add to Card"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/round_button2"/>
+    </LinearLayout>
+</LinearLayout>
