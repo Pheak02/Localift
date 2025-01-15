@@ -14,7 +14,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        buildConfigField("String", "BASE_URL", "\"https://locallift-aeb0d-default-rtdb.firebaseio.com/\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,6 +28,20 @@ android {
         }
     }
 
+    flavorDimensions += "environment"
+
+    productFlavors {
+        create("uat") {
+            dimension = "environment"
+            applicationId = "com.local.locallift"
+            applicationIdSuffix = ".uat"
+            resValue("string", "app_name", "LocalLift UAT")
+            buildConfigField("String", "BASE_URL", "\"https://health4u-5a077-default-rtdb.firebaseio.com/\"")
+            versionName = "1.0-UAT"
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,6 +53,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     packagingOptions {
@@ -50,7 +65,7 @@ android {
 }
 
 dependencies {
-    // Core libraries
+    // Core Android libraries
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
@@ -77,13 +92,14 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
     // Firebase dependencies
-    implementation("com.google.firebase:firebase-firestore:24.7.0")
-    implementation("io.coil-kt:coil:2.2.2")
-    implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
-    implementation ("com.google.firebase:firebase-auth:21.5.0")
-    implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
-    implementation("com.google.firebase:firebase-database:21.0.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.0.0")) // BOM ensures version compatibility
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
+
+    // Coil for image loading
+    implementation("io.coil-kt:coil:2.2.2")
 
     // JavaMail
     implementation("com.sun.mail:android-mail:1.6.7")
