@@ -37,9 +37,4 @@ class SignInViewModel(private val repository: SignInRepository) : ViewModel() {
             }
         }
     }
-
-//    private fun hashPassword(password: String): String {
-//        val bytes = java.security.MessageDigest.getInstance("SHA-256").digest(password.toByteArray())
-//        return bytes.joinToString("") { "%02x".format(it) }
-//    }
 }
