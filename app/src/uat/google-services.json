@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "715725860374",
+    "firebase_url": "https://health4u-5a077-default-rtdb.firebaseio.com",
+    "project_id": "health4u-5a077",
+    "storage_bucket": "health4u-5a077.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715725860374:android:97090886e7d9e2582bcf37",
+        "android_client_info": {
+          "package_name": "com.example.health4u_v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkwJ4wFH8vdcKSIkO2WC6RvGOmac8jF_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715725860374:android:488a3e237f8f09ff2bcf37",
+        "android_client_info": {
+          "package_name": "com.local.locallift.uat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkwJ4wFH8vdcKSIkO2WC6RvGOmac8jF_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

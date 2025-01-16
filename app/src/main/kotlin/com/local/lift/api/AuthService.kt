@@ -1,6 +1,6 @@
 package com.local.lift.api
-
 import com.local.lift.model.User
+import com.local.locallift.BuildConfig
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -29,7 +29,7 @@ interface AuthService {
     ): Response<Void>
 
     companion object {
-        private const val BASE_URL = "https://locallift-aeb0d-default-rtdb.firebaseio.com/"
+        private const val BASE_URL = BuildConfig.BASE_URL
 
         fun create(): AuthService {
             return Retrofit.Builder()
