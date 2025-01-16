@@ -96,8 +96,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
+
     implementation("com.google.firebase:firebase-firestore:24.7.0")
-    implementation("io.coil-kt:coil:2.2.2")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
 
     // Coil for image loading

@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.local.lift.viewModel.SharedViewModel
+import com.local.locallift.R
 import com.local.locallift.databinding.UserProfileBinding
 
 class UserProfileFragment : Fragment() {
@@ -37,8 +39,11 @@ class UserProfileFragment : Fragment() {
             binding.welcomeUser.text = "Welcome, $fullName"
             Log.d("UserProfileFragment", "User Full Name: $fullName")
         }
+        binding.BackButton.setOnClickListener {
+            findNavController().navigate(R.id.action_userProfileFragment_to_productFragment)
+        }
     }
-
+    
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
