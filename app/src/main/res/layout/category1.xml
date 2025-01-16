@@ -50,6 +50,7 @@
             android:padding="3dp">
 
             <Button
+                android:layout_marginRight="15dp"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button"
@@ -58,6 +59,7 @@
                 android:id="@+id/allCat"/>
 
             <Button
+                android:layout_marginRight="15dp"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:text="Clothes"
@@ -68,6 +70,7 @@
                 android:background="@drawable/round_button" />
 
             <Button
+                android:layout_marginRight="15dp"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:text="Bag"
@@ -77,6 +80,7 @@
                 android:background="@drawable/round_button"/>
 
             <Button
+                android:layout_marginRight="15dp"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:text="Accesories"
@@ -87,11 +91,10 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- FrameLayout to hold the fragment -->
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp"/>
+        />
 
 </LinearLayout>
