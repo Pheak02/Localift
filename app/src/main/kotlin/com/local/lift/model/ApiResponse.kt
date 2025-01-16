@@ -1,8 +1,8 @@
 package com.local.lift.model
 
 data class ApiResponse<T>(
-    val status: String,
-    val message: String,
+    val status: String? = null,
+    val message: String?,
     val data: T?
 ) {
 

@@ -89,6 +89,9 @@
             android:id="@+id/action_productFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
         <action
+            android:id="@+id/action_productFragment_to_shoppingCartFragment"
+            app:destination="@id/shoppingCartFragment" />
+        <action
             android:id="@+id/action_productFragment_to_category1Fragment"
             app:destination="@id/category1Fragment" />
     </fragment>

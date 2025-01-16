@@ -6,7 +6,6 @@
     tools:context="com.local.lift.fragment.AllFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="30dp"
         android:id="@+id/recycleData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
