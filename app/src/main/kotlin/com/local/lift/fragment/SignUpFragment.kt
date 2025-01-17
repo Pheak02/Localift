@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.local.lift.model.User
 import com.local.lift.utils.hashPassword
 import com.local.locallift.databinding.SignUpBinding
-import com.local.lift.viewmodel.SignUpViewModel
+import com.local.lift.viewModel.SignUpViewModel
 import com.local.locallift.api.APIState
 import com.local.locallift.R
 
