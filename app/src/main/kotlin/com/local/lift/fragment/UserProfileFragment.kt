@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.local.lift.viewModel.SharedViewModel
 import com.local.locallift.databinding.UserProfileBinding
 
@@ -36,6 +37,15 @@ class UserProfileFragment : Fragment() {
         sharedViewModel.userFullName.observe(viewLifecycleOwner) { fullName ->
             binding.welcomeUser.text = "Welcome, $fullName"
             Log.d("UserProfileFragment", "User Full Name: $fullName")
+        }
+
+        // Handle back arrow click
+        binding.backArrow.setOnClickListener {
+            // If using Jetpack Navigation
+            findNavController().navigateUp()
+
+            // Or for a simpler solution without Navigation Component
+            // requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 
