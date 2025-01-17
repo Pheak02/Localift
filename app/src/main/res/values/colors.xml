@@ -10,6 +10,7 @@
     <color name="pink">#FF1493</color>
     <color name="green">#4CAF50</color>
     <color name="red">#E91E1E</color>
+    <color name="danger">#bb2124</color>
     <color name="light_grey">#808080</color>
     <color name="gray_light">#D3D3D3</color>
     <color name="green_light">#EBF1CF</color>
